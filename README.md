@@ -1,4 +1,4 @@
-# Or-labosi
+# Otvoreno računarstvo - labosi
 
 Skup podataka koji modelira odnosu u NBA-u između ekipa te njihovih članova.
 
