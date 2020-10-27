@@ -2,18 +2,18 @@
     {
         "Ime ekipe":"Denver Nuggets",
         "Grad":"Denver",
-        "Savezna država":"Colorado", 
+        "Savezna drzava":"Colorado", 
         "Arena":"Ball Arena", 
         "Kapacitet":19520, 
         "Godina osnutka":1967, 
-        "Godina priključenja ligi":1976, 
+        "Godina prikljucenja ligi":1976, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Denver_Nuggets",
-        "Trener":{"Ime":"Michael", "Prezime":"Malone"},
-        "Vlasništvo":[
+        "Trener": "Michael Malone",
+        "Vlasnistvo":[
             { "Ime":"Ann", "Prezime":"Walton Kroenke" }
         ], 
-        "Igrači":[
-            { "Ime":"Nikola", "Prezime":"Jokić" },
+        "Igraci":[
+            { "Ime":"Nikola", "Prezime":"Jokic" },
             { "Ime":"Paul", "Prezime":"Millsap" },
             { "Ime":"Jamal", "Prezime":"Murray" },
             { "Ime":"Bol", "Prezime":"Bol" },
@@ -23,18 +23,18 @@
     {
         "Ime ekipe":"Golden State Warriors",
         "Grad":"San Francisco",
-        "Savezna država":"California", 
+        "Savezna drzava":"California", 
         "Arena":"Chase Center", 
         "Kapacitet":18064, 
         "Godina osnutka":1946, 
-        "Godina priključenja ligi":1946, 
+        "Godina prikljucenja ligi":1946, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Golden_State_Warriors",
-        "Trener":{"Ime":"Steve", "Prezime":"Kerr"},
-        "Vlasništvo":[
+        "Trener":"Steve Kerr",
+        "Vlasnistvo":[
             { "Ime":"Joe", "Prezime":"Lacob" },
             { "Ime":"Peter", "Prezime":"Gruber" }
         ], 
-        "Igrači":[
+        "Igraci":[
             { "Ime":"Stephen", "Prezime":"Curry" },
             { "Ime":"Klay", "Prezime":"Thompson" },
             { "Ime":"Draymond", "Prezime":"Green" },
@@ -45,18 +45,18 @@
     {
         "Ime ekipe":"Los Angeles Lakers",
         "Grad":"Los Angeles",
-        "Savezna država":"California", 
+        "Savezna drzava":"California", 
         "Arena":"Staples Center", 
         "Kapacitet":18997, 
         "Godina osnutka":1947, 
-        "Godina priključenja ligi":1948, 
+        "Godina prikljucenja ligi":1948, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Los_Angeles_Lakers",
-        "Trener":{"Ime":"Frank", "Prezime":"Vogel"},
-        "Vlasništvo":[
+        "Trener":{"Ime":"Frank Vogel",
+        "Vlasnistvo":[
             { "Ime":"Philip", "Prezime":"Anschutz" },
             { "Ime":"Edward", "Prezime":"Roski" }
         ], 
-        "Igrači":[
+        "Igraci":[
             { "Ime":"LeBron", "Prezime":"James" },
             { "Ime":"Anthony", "Prezime":"Davis" },
             { "Ime":"Kyle", "Prezime":"Kuzma" },
@@ -67,17 +67,17 @@
     {
         "Ime ekipe":"Los Angeles Clippers",
         "Grad":"Los Angeles",
-        "Savezna država":"California", 
+        "Savezna drzava":"California", 
         "Arena":"Staples Center", 
         "Kapacitet":19060, 
         "Godina osnutka":1970, 
-        "Godina priključenja ligi":1970, 
+        "Godina prikljucenja ligi":1970, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Los_Angeles_Clippers",
-        "Trener":{"Ime":"Tyronn", "Prezime":"Lue"},
-        "Vlasništvo":[
+        "Trener":"Tyronn Lue",
+        "Vlasnistvo":[
             { "Ime":"Steve", "Prezime":"Ballmer" }
         ], 
-        "Igrači":[
+        "Igraci":[
             { "Ime":"Paul", "Prezime":"George" },
             { "Ime":"Kawhi", "Prezime":"Leonard" },
             { "Ime":"Lou", "Prezime":"Williams" },
@@ -88,19 +88,19 @@
     {
         "Ime ekipe":"Portland Trail Blazers",
         "Grad":"Portland",
-        "Savezna država":"Oregon", 
+        "Savezna drzava":"Oregon", 
         "Arena":"Moda Center", 
         "Kapacitet":19441, 
         "Godina osnutka":1970, 
-        "Godina priključenja ligi":1970, 
+        "Godina prikljucenja ligi":1970, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Portland_Trail_Blazers",
-        "Trener":{"Ime":"Terry", "Prezime":"Stotts"},
-        "Vlasništvo":[
+        "Trener":"Terry Stotts",
+        "Vlasnistvo":[
             { "Ime":"Paul", "Prezime":"Allen" }
         ], 
-        "Igrači":[
+        "Igraci":[
             { "Ime":"Damian", "Prezime":"Lillard" },
-            { "Ime":"Jusuf", "Prezime":"Nurkić" },
+            { "Ime":"Jusuf", "Prezime":"Nurkic" },
             { "Ime":"Mario", "Prezime":"Hezonja" },
             { "Ime":"Carmelo", "Prezime":"Anthony" },
             { "Ime":"CJ", "Prezime":"McCollum" }
@@ -109,17 +109,17 @@
     {
         "Ime ekipe":"Oklahoma City Thunder",
         "Grad":"Oklahoma City",
-        "Savezna država":"Oklahoma", 
+        "Savezna drzava":"Oklahoma", 
         "Arena":"Chesapeake Energy Arena", 
         "Kapacitet":18203, 
         "Godina osnutka":1967, 
-        "Godina priključenja ligi":1967, 
+        "Godina prikljucenja ligi":1967, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Oklahoma_City_Thunder",
-        "Trener":{"Ime":"Billy", "Prezime":"Donovan"},
-        "Vlasništvo":[
+        "Trener":"Billy Donovan",
+        "Vlasnistvo":[
             { "Ime":"Clay", "Prezime":"Bennett" }
         ], 
-        "Igrači":[
+        "Igraci":[
             { "Ime":"Chris", "Prezime":"Paul" },
             { "Ime":"Steven", "Prezime":"Adams" },
             { "Ime":"Dennis", "Prezime":"Schröder" },
@@ -130,17 +130,17 @@
     {
         "Ime ekipe":"Houston Rockets",
         "Grad":"Houston",
-        "Savezna država":"Texas", 
+        "Savezna drzava":"Texas", 
         "Arena":"Toyota Center", 
         "Kapacitet":18055, 
         "Godina osnutka":1967, 
-        "Godina priključenja ligi":1967, 
+        "Godina prikljucenja ligi":1967, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Houston_Rockets",
-        "Trener":{"Ime":"Mike", "Prezime":"D'Antoni"},
-        "Vlasništvo":[
+        "Trener":"Mike D'Antoni",
+        "Vlasnistvo":[
             { "Ime":"Tilman", "Prezime":"Fertitta" }
         ], 
-        "Igrači":[
+        "Igraci":[
             { "Ime":"James", "Prezime":"Harden" },
             { "Ime":"Russell", "Prezime":"Westbrook" },
             { "Ime":"Robert", "Prezime":"Covington" },
@@ -151,80 +151,80 @@
     {
         "Ime ekipe":"Dallas Mavericks",
         "Grad":"Dallas",
-        "Savezna država":"Texas", 
+        "Savezna drzava":"Texas", 
         "Arena":"American Airlines Center", 
         "Kapacitet":19200, 
         "Godina osnutka":1980, 
-        "Godina priključenja ligi":1980, 
+        "Godina prikljucenja ligi":1980, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Dallas_Mavericks",
-        "Trener":{"Ime":"Rick", "Prezime":"Carlisle"},
-        "Vlasništvo":[
+        "Trener":"Rick Carlisle",
+        "Vlasnistvo":[
             { "Ime":"Mark", "Prezime":"Cuban" }
         ], 
-        "Igrači":[
-            { "Ime":"Luka", "Prezime":"Dončić" },
+        "Igraci":[
+            { "Ime":"Luka", "Prezime":"Doncic" },
             { "Ime":"Kristaps", "Prezime":"Porzingis" },
             { "Ime":"Seth", "Prezime":"Curry" },
             { "Ime":"Tim", "Prezime":"Hardaway" },
-            { "Ime":"Boban", "Prezime":"Marjanović" }
+            { "Ime":"Boban", "Prezime":"Marjanovic" }
         ]
     },
     {
         "Ime ekipe":"Phoenix Suns",
         "Grad":"Phoenix",
-        "Savezna država":"Arizona", 
+        "Savezna drzava":"Arizona", 
         "Arena":"Talking Stick Resort Arena", 
         "Kapacitet":18055, 
         "Godina osnutka":1968, 
-        "Godina priključenja ligi":1968, 
+        "Godina prikljucenja ligi":1968, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Phoenix_Suns",
-        "Trener":{"Ime":"Monty", "Prezime":"Williams"},
-        "Vlasništvo":[
+        "Trener":"Monty Williams",
+        "Vlasnistvo":[
             { "Ime":"Robert", "Prezime":"Sarver" }
         ], 
-        "Igrači":[
+        "Igraci":[
             { "Ime":"Devin", "Prezime":"Booker" },
             { "Ime":"Deandre", "Prezime":"Ayton" },
             { "Ime":"Ricky", "Prezime":"Rubio" },
-            { "Ime":"Dario", "Prezime":"Šarić" },
+            { "Ime":"Dario", "Prezime":"saric" },
             { "Ime":"Aron", "Prezime":"Baynes" }
         ]
     },
     {
         "Ime ekipe":"Utah Jazz",
         "Grad":"Salt Lake City",
-        "Savezna država":"Utah", 
+        "Savezna drzava":"Utah", 
         "Arena":"Vivint Smart Home Arena", 
         "Kapacitet":19911, 
         "Godina osnutka":1974, 
-        "Godina priključenja ligi":1974, 
+        "Godina prikljucenja ligi":1974, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Utah_Jazz",
-        "Trener":{"Ime":"Quin", "Prezime":"Snyder"},
-        "Vlasništvo":[
+        "Trener":"Quin Snyder",
+        "Vlasnistvo":[
             { "Ime":"Gail", "Prezime":"Miller" }
         ], 
-        "Igrači":[
+        "Igraci":[
             { "Ime":"Donovan", "Prezime":"Mitchell" },
             { "Ime":"Rudy", "Prezime":"Gobert" },
             { "Ime":"Joe", "Prezime":"Ingles" },
             { "Ime":"Mike", "Prezime":"Conley" },
-            { "Ime":"Bojan", "Prezime":"Bogdanović" }
+            { "Ime":"Bojan", "Prezime":"Bogdanovic" }
         ]
     },
     {
         "Ime ekipe":"New Orleans Pelicans",
         "Grad":"New Orleans",
-        "Savezna država":"Louisiana", 
+        "Savezna drzava":"Louisiana", 
         "Arena":"Smoothie King Center", 
         "Kapacitet":16867, 
         "Godina osnutka":2002, 
-        "Godina priključenja ligi":2002, 
+        "Godina prikljucenja ligi":2002, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/New_Orleans_Pelicans",
-        "Trener":{"Ime":"Stanley", "Prezime":"Van Gundy"},
-        "Vlasništvo":[
+        "Trener":"Stanley Van Gundy",
+        "Vlasnistvo":[
             { "Ime":"Gayle", "Prezime":"Benson" }
         ], 
-        "Igrači":[
+        "Igraci":[
             { "Ime":"Zion", "Prezime":"Williamson" },
             { "Ime":"Brandon", "Prezime":"Ingram" },
             { "Ime":"Jrue", "Prezime":"Holiday" },
@@ -235,17 +235,17 @@
     {
         "Ime ekipe":"Minnesota Timberwolves",
         "Grad":"Minneapolis",
-        "Savezna država":"Minnesota", 
+        "Savezna drzava":"Minnesota", 
         "Arena":"Target Center", 
         "Kapacitet":19356, 
         "Godina osnutka":1989, 
-        "Godina priključenja ligi":1989, 
+        "Godina prikljucenja ligi":1989, 
         "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Minnesota_Timberwolves",
-        "Trener":{"Ime":"Ryan", "Prezime":"Saunders"},
-        "Vlasništvo":[
+        "Trener":"Ryan Saunders",
+        "Vlasnistvo":[
             { "Ime":"Glen", "Prezime":"Taylor" }
         ], 
-        "Igrači":[
+        "Igraci":[
             { "Ime":"D'Angelo", "Prezime":"Russell" },
             { "Ime":"Karl-Anthony", "Prezime":"Towns" },
             { "Ime":"Juan", "Prezime":"Hernangómez" },
