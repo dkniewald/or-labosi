@@ -1,0 +1,309 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "title": "NBA ekipe",
+    "description": "Skup NBA ekipi",
+    "items": [
+        [
+            {
+                "Ime ekipe": "Denver Nuggets",
+                "Grad": "Denver",
+                "Savezna drzava": "Colorado",
+                "Arena": "Ball Arena",
+                "Kapacitet": 19520,
+                "Godina osnutka": 1967,
+                "Godina prikljucenja ligi": 1976,
+                "Wikipedia Stranica": "Denver_Nuggets",
+                "Trener": "Michael Malone",
+                "Vlasnistvo": "Ann Walton Kroenke",
+                "Igraci": [
+                    {
+                        "Ime": "Nikola",
+                        "Prezime": "Jokic"
+                    },
+                    {
+                        "Ime": "Paul",
+                        "Prezime": "Millsap"
+                    },
+                    {
+                        "Ime": "Jamal",
+                        "Prezime": "Murray"
+                    },
+                    {
+                        "Ime": "Bol",
+                        "Prezime": "Bol"
+                    },
+                    {
+                        "Ime": "Mason",
+                        "Prezime": "Plumlee"
+                    }
+                ]
+            },
+            {
+                "Ime ekipe": "Golden State Warriors",
+                "Grad": "San Francisco",
+                "Savezna drzava": "California",
+                "Arena": "Chase Center",
+                "Kapacitet": 18064,
+                "Godina osnutka": 1946,
+                "Godina prikljucenja ligi": 1946,
+                "Wikipedia Stranica": "Golden_State_Warriors",
+                "Trener": "Steve Kerr",
+                "Vlasnistvo": "Joe Lacob",
+                "Igraci": [
+                    {
+                        "Ime": "Stephen",
+                        "Prezime": "Curry"
+                    },
+                    {
+                        "Ime": "Klay",
+                        "Prezime": "Thompson"
+                    },
+                    {
+                        "Ime": "Draymond",
+                        "Prezime": "Green"
+                    },
+                    {
+                        "Ime": "Kevon",
+                        "Prezime": "Looney"
+                    },
+                    {
+                        "Ime": "Andrew",
+                        "Prezime": "Wiggins"
+                    }
+                ]
+            }
+        ]
+    ],
+    "additionalItems": true,
+    "items": {
+        "$id": "#/items",
+        "anyOf": [
+            {
+                "$id": "#/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "Ime ekipe": "Denver Nuggets",
+                        "Grad": "Denver",
+                        "Savezna drzava": "Colorado",
+                        "Arena": "Ball Arena",
+                        "Kapacitet": 19520,
+                        "Godina osnutka": 1967,
+                        "Godina prikljucenja ligi": 1976,
+                        "Wikipedia Stranica": "Denver_Nuggets",
+                        "Trener": "Michael Malone",
+                        "Vlasnistvo": "Ann Walton Kroenke",
+                        "Igraci": [
+                            {
+                                "Ime": "Nikola",
+                                "Prezime": "Jokic"
+                            },
+                            {
+                                "Ime": "Paul",
+                                "Prezime": "Millsap"
+                            },
+                            {
+                                "Ime": "Jamal",
+                                "Prezime": "Murray"
+                            },
+                            {
+                                "Ime": "Bol",
+                                "Prezime": "Bol"
+                            },
+                            {
+                                "Ime": "Mason",
+                                "Prezime": "Plumlee"
+                            }
+                        ]
+                    }
+                ],
+                "required": [
+                    "Ime ekipe",
+                    "Grad",
+                    "Savezna drzava",
+                    "Arena",
+                    "Kapacitet",
+                    "Godina osnutka",
+                    "Godina prikljucenja ligi",
+                    "Wikipedia Stranica",
+                    "Trener",
+                    "Vlasnistvo",
+                    "Igraci"
+                ],
+                "properties": {
+                    "Ime ekipe": {
+                        "$id": "#/items/anyOf/0/properties/Ime%20ekipe",
+                        "type": "string",
+                        "title": "The Ime ekipe schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Denver Nuggets"
+                        ]
+                    },
+                    "Grad": {
+                        "$id": "#/items/anyOf/0/properties/Grad",
+                        "type": "string",
+                        "title": "The Grad schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Denver"
+                        ]
+                    },
+                    "Savezna drzava": {
+                        "$id": "#/items/anyOf/0/properties/Savezna%20drzava",
+                        "type": "string",
+                        "title": "The Savezna drzava schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Colorado"
+                        ]
+                    },
+                    "Arena": {
+                        "$id": "#/items/anyOf/0/properties/Arena",
+                        "type": "string",
+                        "title": "The Arena schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Ball Arena"
+                        ]
+                    },
+                    "Kapacitet": {
+                        "$id": "#/items/anyOf/0/properties/Kapacitet",
+                        "type": "integer",
+                        "title": "The Kapacitet schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            19520
+                        ]
+                    },
+                    "Godina osnutka": {
+                        "$id": "#/items/anyOf/0/properties/Godina%20osnutka",
+                        "type": "integer",
+                        "title": "The Godina osnutka schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            1967
+                        ]
+                    },
+                    "Godina prikljucenja ligi": {
+                        "$id": "#/items/anyOf/0/properties/Godina%20prikljucenja%20ligi",
+                        "type": "integer",
+                        "title": "The Godina prikljucenja ligi schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            1976
+                        ]
+                    },
+                    "Wikipedia Stranica": {
+                        "$id": "#/items/anyOf/0/properties/Wikipedia%20Stranica",
+                        "type": "string",
+                        "title": "The Wikipedia Stranica schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Denver_Nuggets"
+                        ]
+                    },
+                    "Trener": {
+                        "$id": "#/items/anyOf/0/properties/Trener",
+                        "type": "string",
+                        "title": "The Trener schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Michael Malone"
+                        ]
+                    },
+                    "Vlasnistvo": {
+                        "$id": "#/items/anyOf/0/properties/Vlasnistvo",
+                        "type": "string",
+                        "title": "The Vlasnistvo schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Ann Walton Kroenke"
+                        ]
+                    },
+                    "Igraci": {
+                        "$id": "#/items/anyOf/0/properties/Igraci",
+                        "type": "array",
+                        "title": "The Igraci schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "examples": [
+                            [
+                                {
+                                    "Ime": "Nikola",
+                                    "Prezime": "Jokic"
+                                },
+                                {
+                                    "Ime": "Paul",
+                                    "Prezime": "Millsap"
+                                }
+                            ]
+                        ],
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/items/anyOf/0/properties/Igraci/items",
+                            "anyOf": [
+                                {
+                                    "$id": "#/items/anyOf/0/properties/Igraci/items/anyOf/0",
+                                    "type": "object",
+                                    "title": "The first anyOf schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": {},
+                                    "examples": [
+                                        {
+                                            "Ime": "Nikola",
+                                            "Prezime": "Jokic"
+                                        }
+                                    ],
+                                    "required": [
+                                        "Ime",
+                                        "Prezime"
+                                    ],
+                                    "properties": {
+                                        "Ime": {
+                                            "$id": "#/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Ime",
+                                            "type": "string",
+                                            "title": "The Ime schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": "",
+                                            "examples": [
+                                                "Nikola"
+                                            ]
+                                        },
+                                        "Prezime": {
+                                            "$id": "#/items/anyOf/0/properties/Igraci/items/anyOf/0/properties/Prezime",
+                                            "type": "string",
+                                            "title": "The Prezime schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": "",
+                                            "examples": [
+                                                "Jokic"
+                                            ]
+                                        }
+                                    },
+                                    "additionalProperties": true
+                                }
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": true
+            }
+        ]
+    }
+}

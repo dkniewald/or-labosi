@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NBA ekipe</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Dominik Kniewald"> 
+    <meta name="description" content="Skup podataka koji modelira odnosu u NBA-u između ekipa te njihovih članova.">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/b-1.6.5/b-html5-1.6.5/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.22/b-1.6.5/b-html5-1.6.5/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+                    // Setup - add a text input to each footer cell
+                    $('#example tfoot th').each(async function () {
+                        var title = $(this).text();
+                        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+                    } );
+                
+                    // DataTable
+                    var table = $('#example').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            {
+                                text: 'JSON',
+                                action: function ( e, dt, button, config ) {
+                                    var data = dt.buttons.exportData();
+                
+                                    $.fn.dataTable.fileSave(
+                                        new Blob( [ JSON.stringify( data ) ] ),
+                                        'Exported.json'
+                                    );
+                                }
+                            },
+                            'csv'
+                        ],
+
+                        initComplete: function () {
+                            // Apply the search
+                            this.api().columns().every( function () {
+                                var that = this;
+                
+                                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                                    if ( that.search() !== this.value ) {
+                                        that
+                                            .search( this.value )
+                                            .draw();
+                                    }
+                        } );
+                    } );
+                }
+            });
+        } );
+    </script> 
+</head>
+
+<body class="content">
+    <header class="header header-fixed header-search primary-color-bg">
+        <nav class="navigation container">
+            <div class="menu">
+                <a href="\" class="link menu-item">Home</a>
+                <a href="\datatable" class="link menu-item">Datatable</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+         <table id="example" class="table table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th title="Field #1">Ime ekipe</th>
+                        <th title="Field #2">Grad</th>
+                        <th title="Field #3">Savezna drzava</th>
+                        <th title="Field #4">Arena</th>
+                        <th title="Field #5">Kapacitet</th>
+                        <th title="Field #6">Godina osnutka</th>
+                        <th title="Field #7">Godina prikljucenja ligi</th>
+                        <th title="Field #8">Wikipedia Stranica</th>
+                        <th title="Field #9">Trener</th>
+                        <th title="Field #10">Vlasnistvo</th>
+                        <th title="Field #11">Igraci__Ime</th>
+                        <th title="Field #12">Igraci__Prezime</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Denver Nuggets</td>
+                        <td>Denver</td>
+                        <td>Colorado</td>
+                        <td>Ball Arena</td>
+                        <td align="right">19520</td>
+                        <td align="right">1967</td>
+                        <td align="right">1976</td>
+                        <td>Denver_Nuggets</td>
+                        <td>Michael Malone</td>
+                        <td>Ann Walton Kroenke</td>
+                        <td>Nikola</td>
+                        <td>Jokic</td>
+                    </tr>
+                    <tr>
+                        <td>Denver Nuggets</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Paul</td>
+                        <td>Millsap</td>
+                    </tr>
+                    <tr>
+                        <td>Denver Nuggets</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Jamal</td>
+                        <td>Murray</td>
+                    </tr>
+                    <tr>
+                        <td>Denver Nuggets</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Bol</td>
+                        <td>Bol</td>
+                    </tr>
+                    <tr>
+                        <td>Denver Nuggets</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Mason</td>
+                        <td>Plumlee</td>
+                    </tr>
+                    <tr>
+                        <td>Golden State Warriors</td>
+                        <td>San Francisco</td>
+                        <td>California</td>
+                        <td>Chase Center</td>
+                        <td align="right">18064</td>
+                        <td align="right">1946</td>
+                        <td align="right">1946</td>
+                        <td>Golden_State_Warriors</td>
+                        <td>Steve Kerr</td>
+                        <td>Joe Lacob</td>
+                        <td>Stephen</td>
+                        <td>Curry</td>
+                    </tr>
+                    <tr>
+                        <td>Golden State Warriors</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Klay</td>
+                        <td>Thompson</td>
+                    </tr>
+                    <tr>
+                        <td>Golden State Warriors</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Draymond</td>
+                        <td>Green</td>
+                    </tr>
+                    <tr>
+                        <td>Golden State Warriors</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Kevon</td>
+                        <td>Looney</td>
+                    </tr>
+                    <tr>
+                        <td>Golden State Warriors</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Andrew</td>
+                        <td>Wiggins</td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles Lakers</td>
+                        <td>Los Angeles</td>
+                        <td>California</td>
+                        <td>Staples Center</td>
+                        <td align="right">18997</td>
+                        <td align="right">1947</td>
+                        <td align="right">1948</td>
+                        <td>Los_Angeles_Lakers</td>
+                        <td>Frank Vogel</td>
+                        <td>Philip Anschutz</td>
+                        <td>LeBron</td>
+                        <td>James</td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles Lakers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Anthony</td>
+                        <td>Davis</td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles Lakers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Kyle</td>
+                        <td>Kuzma</td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles Lakers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Rajon</td>
+                        <td>Rondo</td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles Lakers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Alex</td>
+                        <td>Caruso</td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles Clippers</td>
+                        <td>Los Angeles</td>
+                        <td>California</td>
+                        <td>Staples Center</td>
+                        <td align="right">19060</td>
+                        <td align="right">1970</td>
+                        <td align="right">1970</td>
+                        <td>Los_Angeles_Clippers</td>
+                        <td>Tyronn Lue</td>
+                        <td>Steve Ballmer</td>
+                        <td>Paul</td>
+                        <td>George</td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles Clippers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Kawhi</td>
+                        <td>Leonard</td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles Clippers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Lou</td>
+                        <td>Williams</td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles Clippers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Ivica</td>
+                        <td>Zubac</td>
+                    </tr>
+                    <tr>
+                        <td>Los Angeles Clippers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Marcus</td>
+                        <td>Morris</td>
+                    </tr>
+                    <tr>
+                        <td>Portland Trail Blazers</td>
+                        <td>Portland</td>
+                        <td>Oregon</td>
+                        <td>Moda Center</td>
+                        <td align="right">19441</td>
+                        <td align="right">1970</td>
+                        <td align="right">1970</td>
+                        <td>Portland_Trail_Blazers</td>
+                        <td>Terry Stotts</td>
+                        <td>Paul Allen</td>
+                        <td>Damian</td>
+                        <td>Lillard</td>
+                    </tr>
+                    <tr>
+                        <td>Portland Trail Blazers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Jusuf</td>
+                        <td>Nurkic</td>
+                    </tr>
+                    <tr>
+                        <td>Portland Trail Blazers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Mario</td>
+                        <td>Hezonja</td>
+                    </tr>
+                    <tr>
+                        <td>Portland Trail Blazers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Carmelo</td>
+                        <td>Anthony</td>
+                    </tr>
+                    <tr>
+                        <td>Portland Trail Blazers</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>CJ</td>
+                        <td>McCollum</td>
+                    </tr>
+                    <tr>
+                        <td>Oklahoma City Thunder</td>
+                        <td>Oklahoma City</td>
+                        <td>Oklahoma</td>
+                        <td>Chesapeake Energy Arena</td>
+                        <td align="right">18203</td>
+                        <td align="right">1967</td>
+                        <td align="right">1967</td>
+                        <td>Oklahoma_City_Thunder</td>
+                        <td>Billy Donovan</td>
+                        <td>Clay Bennett</td>
+                        <td>Chris</td>
+                        <td>Paul</td>
+                    </tr>
+                    <tr>
+                        <td>Oklahoma City Thunder</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Steven</td>
+                        <td>Adams</td>
+                    </tr>
+                    <tr>
+                        <td>Oklahoma City Thunder</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Dennis</td>
+                        <td>Schröder</td>
+                    </tr>
+                    <tr>
+                        <td>Oklahoma City Thunder</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Mike</td>
+                        <td>Muscala</td>
+                    </tr>
+                    <tr>
+                        <td>Oklahoma City Thunder</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Shai</td>
+                        <td>Gilgeous-Alexander</td>
+                    </tr>
+                    <tr>
+                        <td>Houston Rockets</td>
+                        <td>Houston</td>
+                        <td>Texas</td>
+                        <td>Toyota Center</td>
+                        <td align="right">18055</td>
+                        <td align="right">1967</td>
+                        <td align="right">1967</td>
+                        <td>Houston_Rockets</td>
+                        <td>Mike D&#39;Antoni</td>
+                        <td>Tilman Fertitta</td>
+                        <td>James</td>
+                        <td>Harden</td>
+                    </tr>
+                    <tr>
+                        <td>Houston Rockets</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Russell</td>
+                        <td>Westbrook</td>
+                    </tr>
+                    <tr>
+                        <td>Houston Rockets</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Robert</td>
+                        <td>Covington</td>
+                    </tr>
+                    <tr>
+                        <td>Houston Rockets</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Austin</td>
+                        <td>Rivers</td>
+                    </tr>
+                    <tr>
+                        <td>Houston Rockets</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Eric</td>
+                        <td>Gordon</td>
+                    </tr>
+                    <tr>
+                        <td>Dallas Mavericks</td>
+                        <td>Dallas</td>
+                        <td>Texas</td>
+                        <td>American Airlines Center</td>
+                        <td align="right">19200</td>
+                        <td align="right">1980</td>
+                        <td align="right">1980</td>
+                        <td>Dallas_Mavericks</td>
+                        <td>Rick Carlisle</td>
+                        <td>Mark Cuban</td>
+                        <td>Luka</td>
+                        <td>Doncic</td>
+                    </tr>
+                    <tr>
+                        <td>Dallas Mavericks</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Kristaps</td>
+                        <td>Porzingis</td>
+                    </tr>
+                    <tr>
+                        <td>Dallas Mavericks</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Seth</td>
+                        <td>Curry</td>
+                    </tr>
+                    <tr>
+                        <td>Dallas Mavericks</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Tim</td>
+                        <td>Hardaway</td>
+                    </tr>
+                    <tr>
+                        <td>Dallas Mavericks</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Boban</td>
+                        <td>Marjanovic</td>
+                    </tr>
+                    <tr>
+                        <td>Phoenix Suns</td>
+                        <td>Phoenix</td>
+                        <td>Arizona</td>
+                        <td>Talking Stick Resort Arena</td>
+                        <td align="right">18055</td>
+                        <td align="right">1968</td>
+                        <td align="right">1968</td>
+                        <td>Phoenix_Suns</td>
+                        <td>Monty Williams</td>
+                        <td>Robert Sarver</td>
+                        <td>Devin</td>
+                        <td>Booker</td>
+                    </tr>
+                    <tr>
+                        <td>Phoenix Suns</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Deandre</td>
+                        <td>Ayton</td>
+                    </tr>
+                    <tr>
+                        <td>Phoenix Suns</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Ricky</td>
+                        <td>Rubio</td>
+                    </tr>
+                    <tr>
+                        <td>Phoenix Suns</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Dario</td>
+                        <td>saric</td>
+                    </tr>
+                    <tr>
+                        <td>Phoenix Suns</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Aron</td>
+                        <td>Baynes</td>
+                    </tr>
+                    <tr>
+                        <td>Utah Jazz</td>
+                        <td>Salt Lake City</td>
+                        <td>Utah</td>
+                        <td>Vivint Smart Home Arena</td>
+                        <td align="right">19911</td>
+                        <td align="right">1974</td>
+                        <td align="right">1974</td>
+                        <td>Utah_Jazz</td>
+                        <td>Quin Snyder</td>
+                        <td>Gail Miller</td>
+                        <td>Donovan</td>
+                        <td>Mitchell</td>
+                    </tr>
+                    <tr>
+                        <td>Utah Jazz</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Rudy</td>
+                        <td>Gobert</td>
+                    </tr>
+                    <tr>
+                        <td>Utah Jazz</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Joe</td>
+                        <td>Ingles</td>
+                    </tr>
+                    <tr>
+                        <td>Utah Jazz</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Mike</td>
+                        <td>Conley</td>
+                    </tr>
+                    <tr>
+                        <td>Utah Jazz</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Bojan</td>
+                        <td>Bogdanovic</td>
+                    </tr>
+                    <tr>
+                        <td>New Orleans Pelicans</td>
+                        <td>New Orleans</td>
+                        <td>Louisiana</td>
+                        <td>Smoothie King Center</td>
+                        <td align="right">16867</td>
+                        <td align="right">2002</td>
+                        <td align="right">2002</td>
+                        <td>New_Orleans_Pelicans</td>
+                        <td>Stanley Van Gundy</td>
+                        <td>Gayle Benson</td>
+                        <td>Zion</td>
+                        <td>Williamson</td>
+                    </tr>
+                    <tr>
+                        <td>New Orleans Pelicans</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Brandon</td>
+                        <td>Ingram</td>
+                    </tr>
+                    <tr>
+                        <td>New Orleans Pelicans</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Jrue</td>
+                        <td>Holiday</td>
+                    </tr>
+                    <tr>
+                        <td>New Orleans Pelicans</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Lonzo</td>
+                        <td>Ball</td>
+                    </tr>
+                    <tr>
+                        <td>New Orleans Pelicans</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Josh</td>
+                        <td>Hart</td>
+                    </tr>
+                    <tr>
+                        <td>Minnesota Timberwolves</td>
+                        <td>Minneapolis</td>
+                        <td>Minnesota</td>
+                        <td>Target Center</td>
+                        <td align="right">19356</td>
+                        <td align="right">1989</td>
+                        <td align="right">1989</td>
+                        <td>Minnesota_Timberwolves</td>
+                        <td>Ryan Saunders</td>
+                        <td>Glen Taylor</td>
+                        <td>D&#39;Angelo</td>
+                        <td>Russell</td>
+                    </tr>
+                    <tr>
+                        <td>Minnesota Timberwolves</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Karl-Anthony</td>
+                        <td>Towns</td>
+                    </tr>
+                    <tr>
+                        <td>Minnesota Timberwolves</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Juan</td>
+                        <td>Hernangómez</td>
+                    </tr>
+                    <tr>
+                        <td>Minnesota Timberwolves</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Evan</td>
+                        <td>Turner</td>
+                    </tr>
+                    <tr>
+                        <td>Minnesota Timberwolves</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>Josh</td>
+                        <td>Okogie</td>
+                    </tr>
+                </tbody>
+
+
+                <tfoot>
+                    <tr>
+                        <th title="Field #1">Ime ekipe</th>
+                        <th title="Field #2">Grad</th>
+                        <th title="Field #3">Savezna drzava</th>
+                        <th title="Field #4">Arena</th>
+                        <th title="Field #5">Kapacitet</th>
+                        <th title="Field #6">Godina osnutka</th>
+                        <th title="Field #7">Godina prikljucenja ligi</th>
+                        <th title="Field #8">Wikipedia Stranica</th>
+                        <th title="Field #9">Trener</th>
+                        <th title="Field #10">Vlasnistvo</th>
+                        <th title="Field #11">Igraci__Ime</th>
+                        <th title="Field #12">Igraci__Prezime</th>
+                    </tr>
+                </tfoot>
+
+			</table>
+    </main>
+    
+    
+</body>
+
+<script>
+</script>
+
+</html>
+
