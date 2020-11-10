@@ -7,11 +7,9 @@
         "Kapacitet":19520, 
         "Godina osnutka":1967, 
         "Godina prikljucenja ligi":1976, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Denver_Nuggets",
-        "Trener": "Michael Malone",
-        "Vlasnistvo":[
-            { "Ime":"Ann", "Prezime":"Walton Kroenke" }
-        ], 
+        "Wikipedia Stranica":"Denver_Nuggets",
+        "Trener":"Michael Malone",
+        "Vlasnistvo": "Ann Walton Kroenke",
         "Igraci":[
             { "Ime":"Nikola", "Prezime":"Jokic" },
             { "Ime":"Paul", "Prezime":"Millsap" },
@@ -28,12 +26,9 @@
         "Kapacitet":18064, 
         "Godina osnutka":1946, 
         "Godina prikljucenja ligi":1946, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Golden_State_Warriors",
+        "Wikipedia Stranica":"Golden_State_Warriors",
         "Trener":"Steve Kerr",
-        "Vlasnistvo":[
-            { "Ime":"Joe", "Prezime":"Lacob" },
-            { "Ime":"Peter", "Prezime":"Gruber" }
-        ], 
+        "Vlasnistvo":"Joe Lacob",
         "Igraci":[
             { "Ime":"Stephen", "Prezime":"Curry" },
             { "Ime":"Klay", "Prezime":"Thompson" },
@@ -50,12 +45,9 @@
         "Kapacitet":18997, 
         "Godina osnutka":1947, 
         "Godina prikljucenja ligi":1948, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Los_Angeles_Lakers",
-        "Trener":{"Ime":"Frank Vogel",
-        "Vlasnistvo":[
-            { "Ime":"Philip", "Prezime":"Anschutz" },
-            { "Ime":"Edward", "Prezime":"Roski" }
-        ], 
+        "Wikipedia Stranica":"Los_Angeles_Lakers",
+        "Trener":"Frank Vogel",
+        "Vlasnistvo":"Philip Anschutz", 
         "Igraci":[
             { "Ime":"LeBron", "Prezime":"James" },
             { "Ime":"Anthony", "Prezime":"Davis" },
@@ -72,11 +64,9 @@
         "Kapacitet":19060, 
         "Godina osnutka":1970, 
         "Godina prikljucenja ligi":1970, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Los_Angeles_Clippers",
+        "Wikipedia Stranica":"Los_Angeles_Clippers",
         "Trener":"Tyronn Lue",
-        "Vlasnistvo":[
-            { "Ime":"Steve", "Prezime":"Ballmer" }
-        ], 
+        "Vlasnistvo":"Steve Ballmer",
         "Igraci":[
             { "Ime":"Paul", "Prezime":"George" },
             { "Ime":"Kawhi", "Prezime":"Leonard" },
@@ -93,11 +83,9 @@
         "Kapacitet":19441, 
         "Godina osnutka":1970, 
         "Godina prikljucenja ligi":1970, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Portland_Trail_Blazers",
+        "Wikipedia Stranica":"Portland_Trail_Blazers",
         "Trener":"Terry Stotts",
-        "Vlasnistvo":[
-            { "Ime":"Paul", "Prezime":"Allen" }
-        ], 
+        "Vlasnistvo":"Paul Allen", 
         "Igraci":[
             { "Ime":"Damian", "Prezime":"Lillard" },
             { "Ime":"Jusuf", "Prezime":"Nurkic" },
@@ -114,11 +102,9 @@
         "Kapacitet":18203, 
         "Godina osnutka":1967, 
         "Godina prikljucenja ligi":1967, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Oklahoma_City_Thunder",
+        "Wikipedia Stranica":"Oklahoma_City_Thunder",
         "Trener":"Billy Donovan",
-        "Vlasnistvo":[
-            { "Ime":"Clay", "Prezime":"Bennett" }
-        ], 
+        "Vlasnistvo":"Clay Bennett", 
         "Igraci":[
             { "Ime":"Chris", "Prezime":"Paul" },
             { "Ime":"Steven", "Prezime":"Adams" },
@@ -135,11 +121,9 @@
         "Kapacitet":18055, 
         "Godina osnutka":1967, 
         "Godina prikljucenja ligi":1967, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Houston_Rockets",
+        "Wikipedia Stranica":"Houston_Rockets",
         "Trener":"Mike D'Antoni",
-        "Vlasnistvo":[
-            { "Ime":"Tilman", "Prezime":"Fertitta" }
-        ], 
+        "Vlasnistvo":"Tilman Fertitta", 
         "Igraci":[
             { "Ime":"James", "Prezime":"Harden" },
             { "Ime":"Russell", "Prezime":"Westbrook" },
@@ -156,11 +140,9 @@
         "Kapacitet":19200, 
         "Godina osnutka":1980, 
         "Godina prikljucenja ligi":1980, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Dallas_Mavericks",
+        "Wikipedia Stranica":"Dallas_Mavericks",
         "Trener":"Rick Carlisle",
-        "Vlasnistvo":[
-            { "Ime":"Mark", "Prezime":"Cuban" }
-        ], 
+        "Vlasnistvo":"Mark Cuban", 
         "Igraci":[
             { "Ime":"Luka", "Prezime":"Doncic" },
             { "Ime":"Kristaps", "Prezime":"Porzingis" },
@@ -177,11 +159,9 @@
         "Kapacitet":18055, 
         "Godina osnutka":1968, 
         "Godina prikljucenja ligi":1968, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Phoenix_Suns",
+        "Wikipedia Stranica":"Phoenix_Suns",
         "Trener":"Monty Williams",
-        "Vlasnistvo":[
-            { "Ime":"Robert", "Prezime":"Sarver" }
-        ], 
+        "Vlasnistvo":"Robert Sarver", 
         "Igraci":[
             { "Ime":"Devin", "Prezime":"Booker" },
             { "Ime":"Deandre", "Prezime":"Ayton" },
@@ -198,11 +178,9 @@
         "Kapacitet":19911, 
         "Godina osnutka":1974, 
         "Godina prikljucenja ligi":1974, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Utah_Jazz",
+        "Wikipedia Stranica":"Utah_Jazz",
         "Trener":"Quin Snyder",
-        "Vlasnistvo":[
-            { "Ime":"Gail", "Prezime":"Miller" }
-        ], 
+        "Vlasnistvo":"Gail Miller", 
         "Igraci":[
             { "Ime":"Donovan", "Prezime":"Mitchell" },
             { "Ime":"Rudy", "Prezime":"Gobert" },
@@ -219,11 +197,9 @@
         "Kapacitet":16867, 
         "Godina osnutka":2002, 
         "Godina prikljucenja ligi":2002, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/New_Orleans_Pelicans",
+        "Wikipedia Stranica":"New_Orleans_Pelicans",
         "Trener":"Stanley Van Gundy",
-        "Vlasnistvo":[
-            { "Ime":"Gayle", "Prezime":"Benson" }
-        ], 
+        "Vlasnistvo":"Gayle Benson", 
         "Igraci":[
             { "Ime":"Zion", "Prezime":"Williamson" },
             { "Ime":"Brandon", "Prezime":"Ingram" },
@@ -240,11 +216,9 @@
         "Kapacitet":19356, 
         "Godina osnutka":1989, 
         "Godina prikljucenja ligi":1989, 
-        "Wikipedia Stranica":"https://en.wikipedia.org/wiki/Minnesota_Timberwolves",
+        "Wikipedia Stranica":"Minnesota_Timberwolves",
         "Trener":"Ryan Saunders",
-        "Vlasnistvo":[
-            { "Ime":"Glen", "Prezime":"Taylor" }
-        ], 
+        "Vlasnistvo":"Glen Taylor", 
         "Igraci":[
             { "Ime":"D'Angelo", "Prezime":"Russell" },
             { "Ime":"Karl-Anthony", "Prezime":"Towns" },
@@ -253,4 +227,4 @@
             { "Ime":"Josh", "Prezime":"Okogie" }
         ]
     }
-    ]
+]
