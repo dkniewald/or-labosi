@@ -1,0 +1,430 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "NBAEkipe API",
+    "description": "API for University project of Software Engineering course.",
+    "version": "1.0",
+    "contact": {
+      "email": "dominik.kniewald@fer.hr"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "https://choosealicense.com/licenses/mit/"
+    }
+  },
+  "tags": [
+    {
+      "name": "Teams"
+    }
+  ],
+  "paths": {
+    "/teamsList": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Popis svih ekipa",
+        "operationId": "listTeams",
+        "responses": {
+          "200": {
+            "description": "Popis svih ekipa",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Ime ekipe": {
+                        "type": "string"
+                      },
+                      "Grad": {
+                        "type": "string"
+                      },
+                      "Wikipedia Stranica": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Dodavanje nove ekipe",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ime": {
+                    "type": "string"
+                  },
+                  "grad": {
+                    "type": "string"
+                  },
+                  "state": {
+                    "type": "string"
+                  },
+                  "stranica": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ekipa je uspješno dodana",
+            "links": {
+              "ekipe": {
+                "operationId": "listTeams"
+              }
+            }
+          },
+          "404": {
+            "description": "Ekipa nije uspješno dodana"
+          }
+        }
+      }
+    },
+    "/teamsList/{ime}": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Dohvati podatke o određenom timu",
+        "operationId": "showTeamByName",
+        "parameters": [
+          {
+            "name": "ime",
+            "description": "Ime određene ekipe",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Podatci određenog tima",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Ime ekipe": {
+                      "type": "string"
+                    },
+                    "Grad": {
+                      "type": "string"
+                    },
+                    "Savezna drzava": {
+                      "type": "string"
+                    },
+                    "Arena": {
+                      "type": "string"
+                    },
+                    "Kapacitet": {
+                      "type": "integer"
+                    },
+                    "Godina osnutka": {
+                      "type": "integer"
+                    },
+                    "Godina prikljucenja ligi": {
+                      "type": "integer"
+                    },
+                    "Wikipedia Stranica": {
+                      "type": "string"
+                    },
+                    "Trener": {
+                      "type": "string"
+                    },
+                    "Vlasnistvo": {
+                      "type": "string"
+                    },
+                    "Igraci": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "Ime": {
+                            "type": "string"
+                          },
+                          "Prezime": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "links": {
+              "ekipe": {
+                "operationId": "listTeams"
+              }
+            }
+          },
+          "400": {
+            "description": "Krivo napisano ime"
+          },
+          "404": {
+            "description": "Neuspjelo dohvaćanje podataka"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Briše zadanu ekipu",
+        "parameters": [
+          {
+            "name": "ime",
+            "in": "path",
+            "description": "Ime ekipe koja se briše",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Krivo zadano ime ekipe"
+          },
+          "404": {
+            "description": "Ekipa sa zadanim imenom nije pronađena"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Ažuriranje podatka određenog tima",
+        "parameters": [
+          {
+            "name": "ime",
+            "description": "Ime određene ekipe",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Arena": {
+                    "type": "string"
+                  },
+                  "Kapacitet": {
+                    "type": "integer"
+                  },
+                  "Trener": {
+                    "type": "string"
+                  },
+                  "Vlasnistvo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "404": {
+            "description": "Ekipa nije uspješno ažurirana"
+          },
+          "405": {
+            "description": "Greška pri provjeri valjanosti"
+          }
+        }
+      }
+    },
+    "/oldestTeams/{broj}": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Popis n najstarijih ekipa",
+        "parameters": [
+          {
+            "name": "broj",
+            "description": "Prikaz n najstarijih ekipa u ligi",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista n najstarijih ekipa",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Ime ekipe": {
+                        "type": "string"
+                      },
+                      "Godina osnutka": {
+                        "type": "integer"
+                      },
+                      "Wikipedia Stranica": {
+                        "type": "string"
+                      },
+                      "Broj ekipa": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Krivo zadan broj ekipa"
+          },
+          "404": {
+            "description": "Neuspjelo dohvaćanje podataka"
+          }
+        }
+      }
+    },
+    "/teamsList/{state}": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Popis svih ekipa iz određene savezne države",
+        "parameters": [
+          {
+            "name": "state",
+            "description": "Prikaz ekipa iz zadane savezne države",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Popis svih ekipa iz zadane savezne države",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Ime ekipe": {
+                        "type": "string"
+                      },
+                      "Grad": {
+                        "type": "string"
+                      },
+                      "Savezna drzava": {
+                        "type": "string"
+                      },
+                      "Wikipedia Stranica": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "links": {
+              "ekipe": {
+                "operationId": "listTeams"
+              }
+            }
+          },
+          "400": {
+            "description": "Krivo napisano ime savezne države"
+          },
+          "404": {
+            "description": "Neuspjelo dohvaćanje podataka"
+          }
+        }
+      }
+    },
+    "/teamsList/{grad}": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Popis svih ekipa iz određenog grada",
+        "parameters": [
+          {
+            "name": "grad",
+            "description": "Prikaz ekipa iz zadanog grada",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Popis svih ekipa iz zadanog grada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Ime ekipe": {
+                        "type": "string"
+                      },
+                      "Grad": {
+                        "type": "string"
+                      },
+                      "Savezna drzava": {
+                        "type": "string"
+                      },
+                      "Wikipedia Stranica": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Krivo napisano ime grada"
+          },
+          "404": {
+            "description": "Neuspjelo dohvaćanje podataka"
+          }
+        }
+      }
+    }
+  }
+}

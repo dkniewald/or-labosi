@@ -1,0 +1,17 @@
+{
+    "name": "lab3",
+    "version": "1.0.0",
+    "description": "",
+    "main": "backend.js",
+    "scripts": {
+        "start": "backend.js"
+    },
+    "keywords": [
+        "express"
+    ],
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-hateoas-links": "^1.2.0",
+        "pg": "^8.5.1"
+    }
+}
