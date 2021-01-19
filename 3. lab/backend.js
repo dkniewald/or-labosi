@@ -30,7 +30,7 @@ app.get("/teamsList/:ime", async (req, res) => {
       ime
    } = req.params;
    try {
-      const ekipa = await pool.query("SELECT * FROM data WHERE 'Ime ekipe' LIKE '%"+ req.params.ime+ "%'")
+      const ekipa = await pool.query("SELECT * FROM data WHERE ime_ekipe LIKE '%"+ req.params.ime+ "%'")
       var responseTeam;
       
       if (ekipa.rowCount == 0) {
@@ -69,7 +69,7 @@ app.get("/oldestTeams/:broj", async (req, res) => {
       broj
    } = req.params;
     try {
-    const teamsListOld = await pool.query("SELECT * from data ORDER BY 'Godina osnutka' LIMIT '%"+ req.params.broj + "%'");
+    const teamsListOld = await pool.query("SELECT * from data ORDER BY god_osnutka LIMIT '"+req.params.broj+"'");
 
     var responseTeamsListOld = {
         "status": "OK",
@@ -99,7 +99,7 @@ app.get("/teamsList/:state", async (req, res) => {
       state
    } = req.params;
    try {
-      const ekipe = await pool.query("SELECT * FROM data WHERE 'Savezna drzava' LIKE '%"+ req.params.state+ "%'")
+      const ekipe = await pool.query("SELECT * FROM data WHERE savezna_drzava LIKE '%"+ req.params.state+ "%'")
       var responseTeams;
       
       if (ekipe.rowCount == 0) {
@@ -138,7 +138,7 @@ app.get("/teamsList/:grad", async (req, res) => {
       grad
    } = req.params;
    try {
-      const ekipe = await pool.query("SELECT * FROM data WHERE 'Savezna drzava' LIKE '%"+ req.params.grad+ "%'")
+      const ekipe = await pool.query("SELECT * FROM data WHERE grad LIKE '%"+ req.params.grad+ "%'")
       var responseTeams;
       
       if (ekipe.rowCount == 0) {
@@ -177,7 +177,7 @@ app.delete("/teamsList/:ime", async (req, res) => {
       ime
    } = req.params;
    try {
-      const ekipa = await pool.query("SELECT * FROM data WHERE 'Ime ekipe' LIKE '%"+ req.params.ime+ "%'")
+      const ekipa = await pool.query("SELECT * FROM data WHERE ime_ekipe LIKE '%"+ req.params.ime+ "%'")
       var responseTeam;
       
       if (ekipa.rowCount == 0) {
@@ -189,7 +189,7 @@ app.delete("/teamsList/:ime", async (req, res) => {
          res.status(404);
       }
       else {
-        const deleteTeam = await pool.query("DELETE FROM data WHERE 'Ime ekipe' LIKE '%"+ req.params.ime+ "%'");
+        const deleteTeam = await pool.query("DELETE FROM data WHERE ime_ekipe LIKE '%"+ req.params.ime+ "%'");
       }
       res.json(responseTeam);
    } catch (err) {
@@ -208,7 +208,7 @@ app.post("/teamsList", async (req, res) => {
         if (ime == undefined || grad == undefined || state == undefined || stranica == undefined) {
             res.sendStatus(400);
         } else {
-            const newTeam = await pool.query("INSERT INTO data ('Ime ekipe', 'Grad', 'Savezna drzava', 'Wikipedia Stranica') VALUES ('"+ ime+ "', '%"+ grad+ "', '"+ state+ "', '"+ stranica+ "') RETURNING *");
+            const newTeam = await pool.query("INSERT INTO data (ime_ekipe, grad, savezna_drzava, wiki_str) VALUES ('"+ ime+ "', '%"+ grad+ "', '"+ state+ "', '"+ stranica+ "') RETURNING *");
 
             var responseTeamNew = {
                 "status": "Kreirano",
@@ -250,7 +250,7 @@ app.put("/teamsList/:ime", async (req, res) => {
         
         
         
-        const ekipa = await pool.query("SELECT * FROM data WHERE 'Ime ekipe' LIKE '%"+ req.params.ime+ "%'")
+        const ekipa = await pool.query("SELECT * FROM data WHERE ime_ekipe LIKE '%"+ req.params.ime+ "%'")
         var responseTeam;
       
          if (ekipa.rowCount == 0) {
@@ -265,19 +265,19 @@ app.put("/teamsList/:ime", async (req, res) => {
              var updateTeam;
              
             if (arena != undefined) {
-                updateTeam = await pool.query("UPDATE data SET 'Arena' = '"+ arena+ "' WHERE 'Ime ekipe' LIKE '%"+ req.params.ime+ "%'");
+                updateTeam = await pool.query("UPDATE data SET arena = '"+ arena+ "' WHERE ime_ekipe LIKE '%"+ req.params.ime+ "%'");
             }
              
             if (kapacitet != undefined) {
-                updateTeam = await pool.query("UPDATE data SET 'Kapacitet' = '"+ kapacitet+ "' WHERE 'Ime ekipe' LIKE '%"+ req.params.ime+ "%'");
+                updateTeam = await pool.query("UPDATE data SET kapacitet = '"+ kapacitet+ "' WHERE ime_ekipe LIKE '%"+ req.params.ime+ "%'");
             }
              
             if (trener != undefined) {
-                updateTeam = await pool.query("UPDATE data SET 'Trener' = '"+ trener+ "' WHERE 'Ime ekipe' LIKE '%"+ req.params.ime+ "%'");
+                updateTeam = await pool.query("UPDATE data SET trener = '"+ trener+ "' WHERE ime_ekipe LIKE '%"+ req.params.ime+ "%'");
             }
              
             if (arena != undefined) {
-                updateTeam = await pool.query("UPDATE data SET 'Vlasnistvo' = '"+ vlasnistvo+ "' WHERE 'Ime ekipe' LIKE '%"+ req.params.ime+ "%'");
+                updateTeam = await pool.query("UPDATE data SET vlasnistvo = '"+ vlasnistvo+ "' WHERE ime_ekipe LIKE '%"+ req.params.ime+ "%'");
             }
              
            var responseTeam = {
@@ -312,4 +312,4 @@ app.use((req, response, next) => {
     });
 });
 
-app.listen(3000, '127.0.0.1');
+app.listen(3000);
